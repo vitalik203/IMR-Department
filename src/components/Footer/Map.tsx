@@ -5,8 +5,8 @@ import "leaflet/dist/leaflet.css"; // додано стиль для Leaflet
 export default function Map() {
   return (
     <MapContainer
-      center={[51.505, -0.09]}
-      zoom={13}
+      center={[49.8380948, 24.0329169]}
+      zoom={16.5}
       scrollWheelZoom={false}
       style={{ height: "100%", maxWidth: "100%" }}
     >
@@ -14,9 +14,11 @@ export default function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[51.505, -0.09]}>
+      <Marker position={[49.8380948, 24.0329169]}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          <a href="https://maps.app.goo.gl/3XTqQGKUV1JVibk98" target="_blank">
+            https://maps.app.goo.gl/3XTqQGKUV1JVibk98
+          </a>
         </Popup>
       </Marker>
     </MapContainer>

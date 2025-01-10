@@ -3,8 +3,10 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import Marquee from "react-fast-marquee";
+import React from "react";
 
 function App() {
+  const [language, setLanguage] = React.useState("ua");
   return (
     <section id="wrapper">
       <Marquee>
@@ -13,9 +15,9 @@ function App() {
         Lviv Polytechnic National University | Національний університет
         «Львівська політехніка» | Lviv Polytechnic National University
       </Marquee>
-      <Header />
-      <Main />
-      <Footer />
+      <Header curentLanguage={language} changeLanguage={setLanguage} />
+      <Main curentLanguage={language} />
+      <Footer curentLanguage={language} />
     </section>
   );
 }

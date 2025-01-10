@@ -4,7 +4,6 @@ import React from "react";
 import Slider from "react-slick";
 
 export default function SimpleSlider() {
-  //   document.querySelector(".dots-sett").style.display = "flex";
   const settings = {
     dots: true,
     infinite: true,

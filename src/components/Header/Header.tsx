@@ -8,13 +8,11 @@ import { Spin as Hamburger } from "hamburger-react";
 import ua from "../translations/ua.json";
 import en from "../translations/en.json";
 
-export default function Header() {
+export default function Header({ curentLanguage, changeLanguage }) {
   const [isOpen, setOpen] = React.useState(false);
-  const [language, setLanguage] = React.useState("ua");
-
   React.useEffect(() => {
-    localStorage.setItem("current-language", language);
-  }, [language]);
+    localStorage.setItem("current-language", curentLanguage);
+  }, [curentLanguage]);
 
   // function handleLanguageSelect(el) {
   //   console.log(el.target.alt);
@@ -29,7 +27,7 @@ export default function Header() {
           alt="header-logo"
         />
         <img
-          src={language === "en" ? en.header.logoImg : ua.header.logoImg}
+          src={curentLanguage === "en" ? en.header.logoImg : ua.header.logoImg}
           id="header-logo-text"
           alt="header-logo-text"
         />
@@ -42,38 +40,38 @@ export default function Header() {
         <ul id="menu-list">
           <li className="menu-item">
             <a href="#" className="menu-link">
-              {language === "en" ? en.header.nav[0] : ua.header.nav[0]}
+              {curentLanguage === "en" ? en.header.nav[0] : ua.header.nav[0]}
             </a>
           </li>
           <li className="menu-item">
             <a href="#" className="menu-link">
-              {language === "en" ? en.header.nav[1] : ua.header.nav[1]}
+              {curentLanguage === "en" ? en.header.nav[1] : ua.header.nav[1]}
             </a>
           </li>
           <li className="menu-item">
             <a href="#" className="menu-link">
-              {language === "en" ? en.header.nav[2] : ua.header.nav[2]}
+              {curentLanguage === "en" ? en.header.nav[2] : ua.header.nav[2]}
             </a>
           </li>
           <li className="menu-item">
             <a href="#" className="menu-link">
-              {language === "en" ? en.header.nav[3] : ua.header.nav[3]}
+              {curentLanguage === "en" ? en.header.nav[3] : ua.header.nav[3]}
             </a>
           </li>
           <li className="menu-item">
             <a href="#" className="menu-link">
-              {language === "en" ? en.header.nav[4] : ua.header.nav[4]}
+              {curentLanguage === "en" ? en.header.nav[4] : ua.header.nav[4]}
             </a>
           </li>
           <li className="menu-item">
             <a href="#" className="menu-link">
-              {language === "en" ? en.header.nav[5] : ua.header.nav[5]}
+              {curentLanguage === "en" ? en.header.nav[5] : ua.header.nav[5]}
             </a>
           </li>
           <li className="menu-item country">
             <a
               href="#"
-              onClick={() => setLanguage("ua")}
+              onClick={() => changeLanguage("ua")}
               className="menu-link-country"
               data-id="ua"
             >
@@ -82,7 +80,7 @@ export default function Header() {
             <div className="vr-header"></div>
             <a
               href="#"
-              onClick={() => setLanguage("en")}
+              onClick={() => changeLanguage("en")}
               className="menu-link-country"
               data-id="en"
             >
