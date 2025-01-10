@@ -4,4 +4,10 @@
   background-color: #454341;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  .map {
+    max-width: 800px;
+    height: 200px;
+    margin: auto 0;
+    margin-left: 35px;
+  }
 }
