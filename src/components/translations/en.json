@@ -1,0 +1,7 @@
+{
+  "header": {
+    "logoImg": "/public/logos/logo 2en.svg",
+    "logoText": "Department of Intelligent Mechatronics and Robotics",
+    "nav": ["News", "About us", "Styding", "Science", "Partnership", "Contacts"]
+  }
+}
