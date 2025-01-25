@@ -1,0 +1,33 @@
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"; // додано імпорт для Marker і Popup
+import "leaflet/dist/leaflet.css"; // додано стиль для Leaflet
+
+import L from "leaflet";
+
+export default function Map() {
+  const myIcon = new L.Icon({
+    iconUrl: "/public/map-point-school-svgrepo-com.svg",
+    iconRetinaUrl: "/public/map-point-school-svgrepo-com.svg",
+    popupAnchor: [-0, -0],
+    iconSize: [32, 45],
+  });
+  return (
+    <MapContainer
+      center={[49.8380948, 24.0329169]}
+      zoom={16.5}
+      scrollWheelZoom={false}
+      style={{ height: "100%", maxWidth: "100%" }}
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Marker position={[49.8380948, 24.0329169]} icon={myIcon}>
+        <Popup>
+          <a href="https://maps.app.goo.gl/3XTqQGKUV1JVibk98" target="_blank">
+            https://maps.app.goo.gl/3XTqQGKUV1JVibk98
+          </a>
+        </Popup>
+      </Marker>
+    </MapContainer>
+  );
+}
