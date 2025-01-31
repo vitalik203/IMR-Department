@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 //Burger
 import { Spin as Hamburger } from "hamburger-react";
@@ -35,18 +36,22 @@ export default function Header({
 
   return (
     <header id="header" className={isScrolled ? "scrolled" : ""}>
-      <div id="header-logo-wrapper">
-        <img
-          src="./public/logos/Logo 1.png"
-          id="header-logo"
-          alt="header-logo"
-        />
-        <img
-          src={curentLanguage === "en" ? en.header.logoImg : ua.header.logoImg}
-          id="header-logo-text"
-          alt="header-logo-text"
-        />
-      </div>
+      <Link className="menu-link" to="/">
+        <div id="header-logo-wrapper">
+          <img
+            src="./public/logos/Logo 1.png"
+            id="header-logo"
+            alt="header-logo"
+          />
+          <img
+            src={
+              curentLanguage === "en" ? en.header.logoImg : ua.header.logoImg
+            }
+            id="header-logo-text"
+            alt="header-logo-text"
+          />
+        </div>
+      </Link>
 
       <div className="burger-wrapper">
         <Hamburger toggled={isOpen} toggle={setOpen} />
@@ -54,38 +59,37 @@ export default function Header({
       <nav className={`header-menu ${isOpen ? "" : "hidden"}`}>
         <ul id="menu-list">
           <li className="menu-item">
-            <a href="#" className="menu-link">
+            <Link className="menu-link" to="/news">
               {curentLanguage === "en" ? en.header.nav[0] : ua.header.nav[0]}
-            </a>
+            </Link>
           </li>
           <li className="menu-item">
-            <a href="#" className="menu-link">
+            <Link className="menu-link" to="/about">
               {curentLanguage === "en" ? en.header.nav[1] : ua.header.nav[1]}
-            </a>
+            </Link>
           </li>
           <li className="menu-item">
-            <a href="#" className="menu-link">
+            <Link className="menu-link" to="/studying">
               {curentLanguage === "en" ? en.header.nav[2] : ua.header.nav[2]}
-            </a>
+            </Link>
           </li>
           <li className="menu-item">
-            <a href="#" className="menu-link">
+            <Link className="menu-link" to="/science">
               {curentLanguage === "en" ? en.header.nav[3] : ua.header.nav[3]}
-            </a>
+            </Link>
           </li>
           <li className="menu-item">
-            <a href="#" className="menu-link">
+            <Link className="menu-link" to="/partnership">
               {curentLanguage === "en" ? en.header.nav[4] : ua.header.nav[4]}
-            </a>
+            </Link>
           </li>
           <li className="menu-item">
-            <a href="#" className="menu-link">
+            <Link className="menu-link" to="/contacts">
               {curentLanguage === "en" ? en.header.nav[5] : ua.header.nav[5]}
-            </a>
+            </Link>
           </li>
           <li className="menu-item country">
             <a
-              href="#"
               onClick={() => changeLanguage("ua")}
               className="menu-link-country"
               data-id="ua"
@@ -94,7 +98,6 @@ export default function Header({
             </a>
             <div className="vr-header"></div>
             <a
-              href="#"
               onClick={() => changeLanguage("en")}
               className="menu-link-country"
               data-id="en"

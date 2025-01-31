@@ -21,6 +21,7 @@
       }
     },
     "footerHr": "<span className=\"footer-hr\"></span>",
-    "rightReserved": "©2025 Кафедра інтелектуальної мехатроніки та роботики"
+    "rightReserved": "©2025 Кафедра інтелектуальної мехатроніки та роботики",
+    "feedback": "https://docs.google.com/forms/d/e/1FAIpQLSetXT0kUjtfkaNqCzZjfMyR7pUmJ9msywnIL8OAFFDEwXCrIQ/viewform"
   }
 }

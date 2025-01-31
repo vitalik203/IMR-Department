@@ -76,6 +76,9 @@ export default function Footer({ curentLanguage }: FooterProps) {
           ? ua.footer.rightReserved
           : en.footer.rightReserved}
       </span>
+      <a href={ua.footer.feedback} className="feedback" target="_blank">
+        {curentLanguage === "ua" ? "ФОРМА ЗВОРОТНЬОГО ЗВЯЗКУ" : "FEEDBACK FORM"}
+      </a>
     </div>
   );
 }
