@@ -17,19 +17,6 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [language, setLanguage] = React.useState<string>("ua");
-  // const [currentMainPage, setCurrentMainPage] =
-  // React.useState<string>("Main_home");
-  // console.log(currentMainPage);
-
-  // const mainPages: Record<string, JSX.Element> = {
-  //   Main_home: <Main />,
-  //   Main_news: <Main_news />,
-  //   Main_about: <Main_about />,
-  //   Main_stydying: <Main_stydying />,
-  //   Main_science: <Main_science />,
-  //   Main_partnership: <Main_partnership />,
-  //   Main_contacts: <Main_contacts />,
-  // };
 
   return (
     <section id="wrapper">
@@ -50,6 +37,10 @@ function App() {
           <Route path="/science" element={<Main_science />} />
           <Route path="/partnership" element={<Main_partnership />} />
           <Route path="/contacts" element={<Main_contacts />} />
+          <Route
+            path="*"
+            element={<h1>404 - INVALID URL OR PAGE DOES NOT EXIST</h1>}
+          />
         </Routes>
       </main>
       <Footer curentLanguage={language} />
