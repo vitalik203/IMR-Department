@@ -63,7 +63,8 @@
 /* Small displays and tablets */
 @media only screen and (max-width: 630px) {
   .footer-wrapper {
-    height: 1000px;
+    height: fit-content !important;
+    padding-bottom: 25px;
     .footer-grid-cover {
       grid-template-columns: 1fr;
       .map {
@@ -91,7 +92,8 @@
 
 @media only screen and (max-width: 1000px) {
   .footer-wrapper {
-    height: 750px;
+    height: fit-content !important;
+    padding-bottom: 25px;
     .feedback {
       max-width: 45%;
       margin: 25px auto;

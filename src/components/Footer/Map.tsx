@@ -14,8 +14,10 @@ export default function Map() {
     <MapContainer
       center={[49.8380948, 24.0329169]}
       zoom={16.5}
-      scrollWheelZoom={false}
       style={{ height: "100%", maxWidth: "100%" }}
+      zoomControl={false} // Відключення стандартного зума
+      scrollWheelZoom={false} // Вимкнути масштабування колесом миші
+      dragging={false}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
