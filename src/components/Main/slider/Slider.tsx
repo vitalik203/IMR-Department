@@ -1,50 +1,59 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import AliceCarousel, { Link } from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+import "./Slide.scss";
 
-export default function SimpleSlider() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    className: "slider-settings",
-    arrows: false,
-    pauseOnHover: true,
-    dotsClass: "dots-sett",
-  };
+//Arrows
+import { SlArrowLeft } from "react-icons/sl";
+import { SlArrowRight } from "react-icons/sl";
+
+const Gallery = () => {
   return (
-    <Slider {...settings}>
-      <div>
-        <img
-          src="/public/New imgs/miks-prezentaciyasandemuse.jpg"
-          alt="news"
-          className="slider-img"
-        />
-      </div>
-      <div>
-        <img
-          src="/public/New imgs/ntb-kolyada-vid-kozhushkiv.png"
-          alt="news"
-          className="slider-img"
-        />
-      </div>
-      <div>
-        <img
-          src="/public/New imgs/tecol-47068998711197848133222143328561145613354872n-t.jpg"
-          alt="news"
-          className="slider-img"
-        />
-      </div>
-      <div>
-        <img
-          src="/public/New imgs/tsus-47135481611008254953878302266073551647608673n-t.jpg"
-          alt="news"
-          className="slider-img"
-        />
-      </div>
-    </Slider>
+    <AliceCarousel
+      mouseTracking
+      autoPlay
+      infinite
+      autoPlayInterval={1000}
+      renderPrevButton={() => (
+        <div className="buttons_cover">
+          <button className="prev-btn">
+            <SlArrowLeft className="prev-btn-custom" size={50} />
+          </button>
+        </div>
+      )}
+      renderNextButton={() => (
+        <div className="buttons_cover">
+          <button className="next-btn">
+            <SlArrowRight className="next-btn-custom" size={50} />
+          </button>
+        </div>
+      )}
+    >
+      <Link
+        target="_blank"
+        href="https://storage.googleapis.com/pod_public/750/120737.jpg"
+      >
+        <img src="https://static-cse.canva.com/blob/847064/29.0368567e.avif" />
+      </Link>
+      <Link
+        target="_blank"
+        href="https://storage.googleapis.com/pod_public/750/120737.jpg"
+      >
+        <img src="https://static-cse.canva.com/blob/847064/29.0368567e.avif" />
+      </Link>
+      <Link
+        target="_blank"
+        href="https://storage.googleapis.com/pod_public/750/120737.jpg"
+      >
+        <img src="https://static-cse.canva.com/blob/847064/29.0368567e.avif" />
+      </Link>
+      <Link
+        target="_blank"
+        href="https://storage.googleapis.com/pod_public/750/120737.jpg"
+      >
+        <img src="https://static-cse.canva.com/blob/847064/29.0368567e.avif" />
+      </Link>
+    </AliceCarousel>
   );
-}
+};
+
+export default Gallery;
